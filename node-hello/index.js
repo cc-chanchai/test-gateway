@@ -14,6 +14,7 @@ server.listen(port, () => {
 
 const client = new Eureka({
   instance: {
+    //id:'NODE-JS-EUREKA',
     app: 'NODE-JS-EUREKA',
     hostName: 'localhost',
     ipAddr: `127.0.0.1:${port}`,
@@ -29,9 +30,9 @@ const client = new Eureka({
     },
   },
   eureka: {
-    host: 'localhost',
+    host: 'admin:admin@192.168.0.130',  //telnet 192.168.0.130 8761
     port: 8761,
-    servicePath: '/eureka/apps/',
+    servicePath: '/eureka/apps',
   }
 });
 client.logger.level('debug');
