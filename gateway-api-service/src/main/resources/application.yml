@@ -10,18 +10,19 @@ eureka:
 spring:
   application:
     name: gateway-api-service
-#  cloud:
-#    gateway:
-#      routes:
-#        - id : user
-#          uri: http://localhost:8090
-#          predicates:
-#            - Path=/user/**
+  cloud:
+    gateway:
+      routes:
+        - id : NODE-JS-EUREKA
+          #uri: lb://NODE-JS-EUREKA
+          uri: http://localhost:3000
+          predicates:
+            - Path=/node/**
 #        - id : shop
 #          uri: http://localhost:8091
 #          predicates:
 #            - Path=/shop/**
 #          filters:
 #            PrefixPath=/api
-#      metrics:
-#        enabled: true
+      metrics:
+        enabled: true
